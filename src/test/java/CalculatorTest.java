@@ -5,19 +5,22 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.fail;
+
 
 public class CalculatorTest {
+
+    Calculator calculator = new Calculator();
+
     @Test
     @DisplayName("Should calculate the addition")
     void shouldCalculateTheAddition () {
         //Scenario: When I have two numbers 34.32 plus 476.87
         //Given
-        String d1 = "34.32";
-        String d2 = "476.87";
+        BigDecimal d1 = calculator.convertBigDecimal("34.32");
+        BigDecimal d2 = calculator.convertBigDecimal("476.87");
 
         //When - I add this two values
-        Calculator calculator = new Calculator();
+
         BigDecimal result = calculator.add(d1,d2);
 
         //Then I will get this result
@@ -29,12 +32,11 @@ public class CalculatorTest {
     void shouldCalculateTheDivision() {
         //Scenario: I have 32 and I have to divide by 4
         //Given
-        String d1 = "32.00";
-        String d2 = "4.00";
+        BigDecimal d1 = calculator.convertBigDecimal("32.00");
+        BigDecimal d2 = calculator.convertBigDecimal("4.00");
 
         //When
-        Calculator t = new Calculator();
-        BigDecimal result = t.division(d1,d2);
+        BigDecimal result = calculator.division(d1,d2);
 
         //Then
         Assertions.assertEquals(new BigDecimal("8"),result);
@@ -45,22 +47,21 @@ public class CalculatorTest {
     void shouldFailWhenDivideByZero() {
         //Scenario: I have a number divide by zero
         //Given
-        String d1 = "32.00";
-        String d2 = "0.00";
+        BigDecimal d1 = calculator.convertBigDecimal("32.00");
+        BigDecimal d2 = calculator.convertBigDecimal("0.00");
 
         //When - Divide by Zero should raise a error.
-        Calculator test = new Calculator();
 
         //Then
-        Assertions.assertThrows(ArithmeticException.class,() -> {test.division(d1,d2);});
+        Assertions.assertThrows(ArithmeticException.class,() -> calculator.division(d1,d2));
 
     }
     @Test
     @DisplayName("Should calculate the multiplication")
     void shouldCalculateTheMultiplication () {
         //Given - I have to two numbers to multiplier
-        String d1 = "5.1";
-        String d2 = "5.5";
+        BigDecimal d1 = calculator.convertBigDecimal("5.1");
+        BigDecimal d2 = calculator.convertBigDecimal("5.5");
 
         //When - I multiplies this two number
         Calculator t = new Calculator();
@@ -75,11 +76,10 @@ public class CalculatorTest {
     void shouldCalculateTheSubtraction() {
         //Scenario: When I have two numbers 734.32 plus 476.87
         //Given
-        String d1 = "734.32";
-        String d2 = "476.87";
+        BigDecimal d1 = calculator.convertBigDecimal("734.32");
+        BigDecimal d2 = calculator.convertBigDecimal("476.87");
 
         //When - I add this two values
-        Calculator calculator = new Calculator();
         BigDecimal result = calculator.subtraction(d1,d2);
 
         //Then I will get this result

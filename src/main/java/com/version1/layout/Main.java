@@ -51,8 +51,8 @@ public class Main {
         if (number1.isEmpty() || number2.isEmpty() || cal.getOperation() == null  ) {
             System.out.println("Please provide a operation with two numbers");
         } else {
-            cal.setValue1(number1);
-            cal.setValue2(number2);
+            cal.setValue1(cal.convertBigDecimal(number1));
+            cal.setValue2(cal.convertBigDecimal(number2));
             switch (cal.getOperation()){
                 case "+":
                     result = cal.add(cal.getValue1(),cal.getValue2());
