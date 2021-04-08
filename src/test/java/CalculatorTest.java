@@ -39,7 +39,7 @@ public class CalculatorTest {
         BigDecimal result = calculator.division(d1,d2);
 
         //Then
-        Assertions.assertEquals(new BigDecimal("8"),result);
+        Assertions.assertEquals(new BigDecimal("8.00"),result);
     }
 
     @Test

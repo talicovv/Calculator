@@ -18,52 +18,52 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] parts = userInput.split("");
-        Boolean before = false;
-        String number1 = null;
-        String number2 = null;
-        for (int i = 0; i < parts.length ; i++) {
-            if (util.isNumeric(parts[i])) {
-                if (!before){
-                   if (number1 ==null){
-                       number1 = parts[i];
-                       before = true;
-                    }else if (number2 == null){
-                       number2 = parts[i];
-                       before = true;
-                   }
-                }else {
-                    if(number1 != null && number2 != null){
-                        number2 = number2 + parts[i];
+        boolean before = false;
+        StringBuilder number1 = null;
+        StringBuilder number2 = null;
+        for (String part : parts) {
+            if (Util.isNumeric(part)) {
+                if (!before) {
+                    if (number1 == null) {
+                        number1 = new StringBuilder(part);
+                        before = true;
+                    } else if (number2 == null) {
+                        number2 = new StringBuilder(part);
+                        before = true;
+                    }
+                } else {
+                    if ( number2 != null) {
+                        number2.append(part);
                     } else {
-                        number1 = number1 + parts[i];
+                        number1.append(part);
                     }
                 }
 
-            }else {
+            } else {
                 before = false;
-                if (util.isOperation(parts[i])){
-                    cal.setOperation(parts[i]);
+                if (util.isOperation(part) != null) {
+                    cal.setOperation(util.isOperation(part));
                 }
             }
 
         }
 
-        if (number1.isEmpty() || number2.isEmpty() || cal.getOperation() == null  ) {
+        if (((number1 != null ? number1.length() : 0) == 0) || ((number2 != null ? number2.length() : 0) == 0) || cal.getOperation() == null  ) {
             System.out.println("Please provide a operation with two numbers");
         } else {
-            cal.setValue1(cal.convertBigDecimal(number1));
-            cal.setValue2(cal.convertBigDecimal(number2));
+            cal.setValue1(cal.convertBigDecimal(number1.toString()));
+            cal.setValue2(cal.convertBigDecimal(number2.toString()));
             switch (cal.getOperation()){
-                case "+":
+                case ADD:
                     result = cal.add(cal.getValue1(),cal.getValue2());
                     break;
-                case "-":
+                case SUB:
                     result = cal.subtraction(cal.getValue1(),cal.getValue2());
                     break;
-                case "*":
+                case MUL:
                     result = cal.multiplication(cal.getValue1(),cal.getValue2());
                     break;
-                case "/":
+                case DIV:
                     result = cal.division(cal.getValue1(),cal.getValue2());
                     break;
             }

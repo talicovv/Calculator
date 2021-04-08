@@ -2,6 +2,13 @@ package com.version1.layout;
 
 public class Util {
 
+    public enum Operation {
+        ADD,
+        SUB,
+        MUL,
+        DIV
+    }
+
     public static boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;
@@ -17,13 +24,22 @@ public class Util {
         return true;
     }
 
-    public boolean isOperation(String part) {
-        String base = "+-/*" ;
-        String[] op = base.split("");
-        for (int i=0; i< op.length ; i++ ) {
-            if (op[i].equals( part))
-                return true;
+    public Operation isOperation(String part) {
+        Operation result;
+        switch (part){
+            case "-":
+                result = Operation.SUB;
+                break;
+            case "/":
+                result = Operation.DIV;
+                break;
+            case "*":
+                result = Operation.MUL;
+                break;
+            default:
+                result = null;
+                break;
         }
-        return false;
+        return result;
     }
 }

@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9afdfa23-6834-410b-94e4-011cd5bfa5d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.7/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Calculator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/version1/layout/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/version1/layout/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/version1/layout/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/version1/layout/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/version1/layout/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/version1/layout/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/version1/layout/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/version1/layout/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/version1/layout/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/version1/layout/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CalculatorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +64,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1phRd44Fo8whVmL9ZtnsKs8BvyV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -136,12 +136,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Calculator2" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Skippy" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -154,7 +155,7 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.version1.layout.Main" />
       <module name="Calculator" />
@@ -231,8 +232,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CalculatorTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CalculatorTest" />
         <item itemvalue="Gradle.CalculatorTest" />
         <item itemvalue="Gradle.ExampleTest" />
       </list>
@@ -283,7 +284,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Calculator$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1617645896326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Calculator$Main.ic" NAME="Main Coverage Results" MODIFIED="1617645579014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Calculator$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1617739372174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.version1.layout.Calculator</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Calculator$Main.ic" NAME="Main Coverage Results" MODIFIED="1617739391407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

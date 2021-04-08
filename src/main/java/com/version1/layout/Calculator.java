@@ -1,49 +1,26 @@
 package com.version1.layout;
 
-import java.util.Scanner;
+import lombok.Data;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 
 
 /**
  * will calculate the operation
  *
  */
-public class Calculator {
+public @Data class Calculator {
 
 
     BigDecimal value1 = null;
     BigDecimal value2 = null;
-    String Operation = null;
-    Util util = new Util();
+    Util.Operation Operation = null;
 
-    public BigDecimal getValue1() {
-        return this.value1;
-    }
-
-    public void setValue1(BigDecimal value1) {
-        this.value1 = value1;
-    }
-
-    public BigDecimal getValue2() {
-        return this.value2;
-    }
-
-    public void setValue2(BigDecimal value2) {
-        this.value2 = value2;
-    }
-
-    public String getOperation() {
-        return Operation;
-    }
-
-    public void setOperation(String operation) {
-        Operation = operation;
-    }
 
     public BigDecimal convertBigDecimal(String value){
         try {
-            BigDecimal number = new BigDecimal(value);
-            return number;
+            return new BigDecimal(value);
         }catch (NumberFormatException e){
             System.out.println("Error it is not number!");
             return null;
@@ -59,18 +36,15 @@ public class Calculator {
      */
     public BigDecimal add(BigDecimal x, BigDecimal y){
 
-        BigDecimal result = x.add(y);
-        return result;
+        return x.add(y);
     }
 
     public BigDecimal subtraction (BigDecimal x, BigDecimal y){
 
-        BigDecimal result = x.subtract(y);
-        return result;
+        return x.subtract(y);
     }
     public BigDecimal multiplication (BigDecimal x, BigDecimal y){
-        BigDecimal result = x.multiply(y);
-        return result;
+        return x.multiply(y);
 
     }
     public BigDecimal division (BigDecimal x, BigDecimal y){
@@ -79,8 +53,7 @@ public class Calculator {
             throw new ArithmeticException();
            // return -1;
         }else {
-            BigDecimal result = x.divide(y);
-            return result;
+            return x.divide(y, 2, RoundingMode.HALF_UP);
         }
     }
 
