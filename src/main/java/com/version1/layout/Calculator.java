@@ -56,6 +56,25 @@ public @Data class Calculator {
             return x.divide(y, 2, RoundingMode.HALF_UP);
         }
     }
+    public BigDecimal calculator(){
+        BigDecimal result = new BigDecimal("0.0");
+
+        switch (this.getOperation()){
+            case ADD:
+                result = this.add(this.getValue1(),this.getValue2());
+                break;
+            case SUB:
+                result = this.subtraction(this.getValue1(),this.getValue2());
+                break;
+            case MUL:
+                result = this.multiplication(this.getValue1(),this.getValue2());
+                break;
+            case DIV:
+                result = this.division(this.getValue1(),this.getValue2());
+                break;
+        }
+        return result;
+    }
 
 
     public Calculator() {

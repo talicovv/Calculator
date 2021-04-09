@@ -1,78 +1,74 @@
 package com.version1.layout;
 
-
 import java.math.BigDecimal;
-import java.util.Scanner;
+
 
 public class Main {
 
 
-
-    public static void main(String[] args) {
-        Calculator cal = new Calculator();
+    public static Calculator startCalc(String[] parts){
         Util util = new Util();
-        BigDecimal result = new BigDecimal("0.0");
+        Calculator cal = new Calculator();
 
-        System.out.println("Enter your operation ( 2 + 2 ) :");
-
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        String[] parts = userInput.split("");
-        boolean before = false;
-        StringBuilder number1 = null;
-        StringBuilder number2 = null;
+        String number1 = null;
+        String number2 = null;
         for (String part : parts) {
             if (Util.isNumeric(part)) {
-                if (!before) {
-                    if (number1 == null) {
-                        number1 = new StringBuilder(part);
-                        before = true;
-                    } else if (number2 == null) {
-                        number2 = new StringBuilder(part);
-                        before = true;
-                    }
-                } else {
-                    if ( number2 != null) {
-                        number2.append(part);
-                    } else {
-                        number1.append(part);
-                    }
+
+                if (number1 == null) {
+                    number1 = new String(part);
+                } else if (number2 == null) {
+                    number2 = new String(part);
                 }
 
-            } else {
-                before = false;
-                if (util.isOperation(part) != null) {
-                    cal.setOperation(util.isOperation(part));
-                }
+            } else if (util.isOperation(part) != null) {
+                cal.setOperation(util.isOperation(part));
             }
-
         }
 
         if (((number1 != null ? number1.length() : 0) == 0) || ((number2 != null ? number2.length() : 0) == 0) || cal.getOperation() == null  ) {
             System.out.println("Please provide a operation with two numbers");
         } else {
-            cal.setValue1(cal.convertBigDecimal(number1.toString()));
-            cal.setValue2(cal.convertBigDecimal(number2.toString()));
-            switch (cal.getOperation()){
-                case ADD:
-                    result = cal.add(cal.getValue1(),cal.getValue2());
-                    break;
-                case SUB:
-                    result = cal.subtraction(cal.getValue1(),cal.getValue2());
-                    break;
-                case MUL:
-                    result = cal.multiplication(cal.getValue1(),cal.getValue2());
-                    break;
-                case DIV:
-                    result = cal.division(cal.getValue1(),cal.getValue2());
-                    break;
-            }
-            if (result != null) {
-                String output = String.format("Result is %.2f ", result);
-                System.out.println(output);
+            cal.setValue1(cal.convertBigDecimal(number1));
+            cal.setValue2(cal.convertBigDecimal(number2));
+            return cal;
+        }
+        return null;
+    }
+    public static void calPrompt(){
+        BigDecimal result = new BigDecimal("0.0");
+        Calculator cal_Prompt = new Calculator();
+        cal_Prompt = startCalc(Util.get_prompt() );
+        result = cal_Prompt.calculator();
+        System.out.println("Prompt result is: "+result);
+    }
+    public static void calFiles(){
+        BigDecimal result = new BigDecimal("0.0");
+        Calculator cal_File = new Calculator();
+        String [] file = Util.get_file();
+        String [] fileCurrent = new String[3];
+        fileCurrent[0] = file[0];
+        fileCurrent[1] = file[1];
+        fileCurrent[2] = file[2];
+        cal_File = startCalc(fileCurrent);
+        result = cal_File.calculator();
+        if (file.length > 3){
+            for (int i=3; i < file.length;i++){
+                fileCurrent[0] = file[0];
+                fileCurrent[1] = result.toString();
+                fileCurrent[2] = file[i];
+                cal_File = startCalc(fileCurrent);
+                result = cal_File.calculator();
             }
         }
+        System.out.println("File result is: "+result);
+    }
 
+
+    public static void main(String[] args) {
+
+        calPrompt();
+        calFiles();
     }
 
 
